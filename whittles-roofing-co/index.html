@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Website preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<script src="business.js"></script>
+<style>
+/* One template, three looks: body[data-style] = bold | clean | classic.
+   Every business-specific word, photo and color comes from business.js. */
+:root{--c:#1f6fb2;--c-dark:#124a7a;--c-soft:#e3eef8;--on:#fff;--ink:#14181f;--muted:#5b6472;--line:#e6e2dc;--bg:#faf8f5;--card:#fff;--night:#0f1319;--head:"Plus Jakarta Sans",Inter,sans-serif;--r:20px}
+body[data-style=classic]{--head:Fraunces,Georgia,serif;--bg:#f6f3ee;--r:6px}
+body[data-style=clean]{--bg:#fff;--r:14px}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:var(--head);line-height:1.08;margin:0;text-wrap:balance}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(5vw,18px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--c);color:var(--on);font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px;white-space:nowrap;transition:transform .2s,filter .2s}
+body[data-style=classic] .btn{border-radius:4px}
+.btn:hover{filter:brightness(.92);transform:translateY(-1px)}
+.btn.line{background:transparent;color:inherit;border:1.5px solid currentColor}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,box-shadow .3s;color:#fff}
+.nav.solid{background:rgba(15,19,25,.94);backdrop-filter:blur(10px)}
+body[data-style=clean] .nav{color:var(--ink);background:rgba(255,255,255,.96);box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 18px var(--head);line-height:1.1}
+.logo i{width:38px;height:38px;border-radius:10px;background:var(--c);color:var(--on);display:grid;place-items:center;flex:none;font:800 15px "Plus Jakarta Sans",sans-serif;font-style:normal}
+.links{display:flex;gap:26px;font-size:15px;opacity:.85}
+.links a{text-decoration:none}.links a:hover{opacity:1;text-decoration:underline}
+.nav .call{font-weight:600;text-decoration:none;white-space:nowrap}
+.nav-right{display:flex;align-items:center;gap:18px}
+/* hero: bold = full photo, clean = split with form, classic = centered band */
+.hero{position:relative}
+.hero .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .tag{display:inline-flex;gap:8px;align-items:center;font-size:14px;margin-bottom:18px;opacity:.9}
+.hero .tag b{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.hero h1{font-size:clamp(38px,6vw,72px);font-weight:800;letter-spacing:-.02em}
+body[data-style=classic] .hero h1{font-weight:600;letter-spacing:-.01em}
+.hero p.sub{font-size:clamp(17px,1.5vw,19px);max-width:36rem;margin:20px 0 28px;opacity:.88}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:34px;font-size:15px;opacity:.85}
+.facts span:before{content:"✓ ";color:var(--c-soft)}
+body[data-style=bold] .hero{min-height:min(92vh,820px);display:flex;align-items:flex-end;color:#fff;background:var(--night)}
+body[data-style=bold] .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,13,18,.88),rgba(10,13,18,.45) 55%,rgba(10,13,18,.15)),linear-gradient(0deg,rgba(10,13,18,.7),transparent 45%)}
+body[data-style=bold] .hero .inner{position:relative;z-index:1;padding-top:140px;padding-bottom:70px}
+body[data-style=bold] .hero .side{display:none}
+body[data-style=clean] .hero{padding:132px 0 64px!important;background:linear-gradient(180deg,var(--c-soft),#fff)}
+body[data-style=clean] .hero .photo{display:none}
+body[data-style=clean] .hero .grid2{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+body[data-style=clean] .hero .side img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:0 30px 60px -30px rgba(20,24,31,.45)}
+body[data-style=clean] .facts span:before{color:var(--c)}
+body[data-style=classic] .hero{min-height:min(86vh,760px);display:flex;align-items:center;text-align:center;color:#fff;background:var(--night)}
+body[data-style=classic] .hero:after{content:"";position:absolute;inset:0;background:rgba(12,14,18,.58)}
+body[data-style=classic] .hero .inner{position:relative;z-index:1;padding:140px 0 80px;margin:0 auto;max-width:900px}
+body[data-style=classic] .hero p.sub{margin-left:auto;margin-right:auto}
+body[data-style=classic] .ctas,body[data-style=classic] .facts,body[data-style=classic] .hero .tag{justify-content:center}
+body[data-style=classic] .hero .side{display:none}
+/* quick form */
+.qform{background:var(--card);color:var(--ink);border-radius:var(--r);padding:26px;box-shadow:0 30px 60px -30px rgba(20,24,31,.4);display:grid;gap:12px;margin-top:22px}
+.qform h3{font-size:20px}
+/* sections */
+section{padding:clamp(64px,9vw,108px) 0}
+.kicker{color:var(--c-dark);font-weight:600;font-size:15px;margin-bottom:12px}
+.h2{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.015em;max-width:22ch}
+body[data-style=classic] .h2{font-weight:600}
+.lead{color:var(--muted);font-size:18px;max-width:42rem;margin-top:16px}
+.cards{display:grid;gap:20px;margin-top:42px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.card .n{width:44px;height:44px;border-radius:12px;background:var(--c-soft);color:var(--c-dark);display:grid;place-items:center;font-weight:700;margin-bottom:16px}
+.card h3{font-size:20px;margin-bottom:8px}.card p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:center}
+.split img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r)}
+.dark{background:var(--night);color:#fff}.dark .lead{color:rgba(255,255,255,.75)}.dark .kicker{color:var(--c-soft)}
+.stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:28px}
+.stats b{display:block;font:800 34px var(--head);color:var(--c-soft)}
+.gallery{display:grid;gap:14px;margin-top:40px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.reviews{display:grid;gap:20px;margin-top:40px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.review .stars{color:#f5a623;letter-spacing:2px}
+.review q{display:block;font:500 19px/1.4 var(--head);margin:12px 0 16px;quotes:"“" "”"}
+.review span{color:var(--muted);font-size:15px}
+.areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.areas span{padding:8px 16px;border-radius:999px;background:var(--c-soft);color:var(--c-dark);font-weight:600;font-size:15px}
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,64px)}
+.info{display:grid;gap:14px;margin-top:26px;font-size:17px}
+.info a,.info div{text-decoration:none;display:flex;gap:12px}
+.info small{color:var(--muted);min-width:64px;padding-top:2px}
+form.big{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,4vw,34px);display:grid;gap:14px;grid-template-columns:1fr 1fr}
+form .full{grid-column:1/-1}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:16px Inter,sans-serif;padding:12px 14px;border:1px solid #d7d2ca;border-radius:10px;background:#fff;width:100%;min-height:48px;color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+.note{font-size:13px;color:var(--muted);margin:0}
+.done{display:none;background:var(--c-soft);color:var(--c-dark);border-radius:12px;padding:14px;font-weight:600}
+footer{background:var(--night);color:rgba(255,255,255,.7);padding:46px 0 110px;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+.callbar{display:none}
+.pbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#14181f;color:#fff;font-size:13px;text-align:center;padding:7px 12px}
+@media(max-width:600px){.pbar{bottom:68px;font-size:12px;padding:5px 10px;background:rgba(20,24,31,.92)}}
+[hidden]{display:none!important}
+@media(max-width:900px){.links{display:none}.split,.contact,body[data-style=clean] .hero .grid2{grid-template-columns:minmax(0,1fr)}.split img{aspect-ratio:4/3}}
+@media(max-width:600px){form.big{grid-template-columns:minmax(0,1fr)}.nav .call,.nav-right .btn{display:none}
+.callbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}.callbar a{flex:1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body data-style="classic">
+<div class="pbar" id="pbar"></div>
+<header class="nav" id="nav"><div class="wrap">
+  <a class="logo" href="#top"><i id="mono">YC</i><span data-b="name">Your Company</span></a>
+  <nav class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#work" id="nav-work">Our work</a><a href="#reviews" id="nav-reviews">Reviews</a><a href="#contact">Contact</a></nav>
+  <div class="nav-right"><a class="call" data-b="phoneLink" href="#contact" id="nav-call"><span data-b="phone"></span></a><a class="btn" href="#contact">Free estimate</a></div>
+</div></header>
+
+<main id="top">
+<section class="hero" style="padding-top:0;padding-bottom:0">
+  <img class="photo" id="hero-img" alt="">
+  <div class="wrap inner"><div class="grid2">
+    <div>
+      <div class="tag"><b></b><span id="tagline"></span></div>
+      <h1 id="hero-title"></h1>
+      <p class="sub" id="hero-text"></p>
+      <div class="ctas"><a class="btn" href="#contact">Get a free estimate</a><a class="btn line" data-b="phoneLink" href="#contact" id="hero-call">Call <span data-b="phone"></span></a></div>
+      <div class="facts" id="facts"></div>
+    </div>
+    <div class="side">
+      <img id="side-img" alt="">
+      <form class="qform" id="qform"><h3>Request a free estimate</h3>
+        <input placeholder="Your name" required autocomplete="name"><input type="tel" placeholder="Phone or email" required>
+        <button class="btn" type="submit">Send request</button><div class="done">Thanks! In the live version, this goes straight to <span data-b="name"></span>.</div></form>
+    </div>
+  </div></div>
+</section>
+
+<section id="services"><div class="wrap">
+  <div class="kicker">What we do</div>
+  <h2 class="h2" id="services-title">Services</h2>
+  <div class="cards" id="services-list"></div>
+</div></section>
+
+<section class="dark" id="about"><div class="wrap split">
+  <img id="about-img" alt="">
+  <div>
+    <div class="kicker">About us</div>
+    <h2 class="h2" id="about-title"></h2>
+    <p class="lead" id="about-text"></p>
+    <div class="stats" id="stats"></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="kicker">Our work</div>
+  <h2 class="h2" id="gallery-title">What we build</h2>
+  <div class="gallery" id="gallery"></div>
+</div></section>
+
+<section id="reviews" style="padding-top:0"><div class="wrap">
+  <div class="kicker">Reviews</div>
+  <h2 class="h2">What our customers say</h2>
+  <div class="reviews" id="review-list"></div>
+</div></section>
+
+<section id="contact" style="background:var(--card);border-top:1px solid var(--line)"><div class="wrap contact">
+  <div>
+    <div class="kicker">Free estimate</div>
+    <h2 class="h2">Let's talk about your project.</h2>
+    <p class="lead">Tell us what you need and we will get back to you.</p>
+    <div class="info" id="info"></div>
+    <div id="areas-wrap"><div class="kicker" style="margin-top:30px">Areas we serve</div><div class="areas" id="areas"></div></div>
+  </div>
+  <form class="big" id="form">
+    <label>Full name<input required autocomplete="name"></label>
+    <label>Phone<input type="tel" autocomplete="tel"></label>
+    <label class="full">Email<input type="email" required autocomplete="email"></label>
+    <label class="full">I need help with<select id="service-select"></select></label>
+    <label class="full">Message<textarea placeholder="Tell us a little about your project…"></textarea></label>
+    <button class="btn full" type="submit">Request my free estimate</button>
+    <p class="note full">Website preview: this form does not send anything yet.</p>
+    <div class="done full">Thanks! In the live version, this message goes straight to <span data-b="name"></span>.</div>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><strong style="color:#fff" data-b="name"></strong><div id="foot-address"></div></div>
+  <div id="credit">Website preview</div>
+</div></footer>
+<div class="callbar" id="callbar"><a class="btn" data-b="phoneLink" href="#contact">Call</a><a class="btn" href="#contact" style="background:#fff;color:#14181f">Free estimate</a></div>
+
+<script>
+{
+const B = window.WEBSITE_BUSINESS || {}
+const $ = id => document.getElementById(id)
+const name = B.name || 'Your Company'
+const style = ['bold', 'clean', 'classic'].includes(B.style) ? B.style : 'classic'
+document.body.dataset.style = style
+// colors
+const hex = /^#[0-9a-f]{6}$/i.test(B.theme_color || '') ? B.theme_color : '#1f6fb2'
+const rgb = hex.slice(1).match(/../g).map(n => parseInt(n, 16))
+const mix = (c, t, a) => c.map((n, i) => Math.round(n + (t[i] - n) * a))
+const lum = c => c.map(n => { n /= 255; return n <= .04045 ? n / 12.92 : ((n + .055) / 1.055) ** 2.4 }).reduce((s, n, i) => s + n * [.2126, .7152, .0722][i], 0)
+let dark = rgb; while (lum(dark) > .1) dark = mix(dark, [0, 0, 0], .1)
+const css = c => 'rgb(' + c.join(',') + ')', R = document.documentElement.style
+R.setProperty('--c', hex); R.setProperty('--c-dark', css(dark)); R.setProperty('--c-soft', css(mix(rgb, [255, 255, 255], .86)))
+R.setProperty('--on', lum(rgb) > .4 ? '#14181f' : '#fff')
+// text helpers
+const txt = (el, v) => { if (el) el.textContent = v || '' }
+const setAll = (k, v) => document.querySelectorAll('[data-b="' + k + '"]').forEach(el => txt(el, v))
+const make = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e }
+const img = (el, src, alt) => { if (src) { el.src = src; el.alt = alt || '' } else el.hidden = true }
+const words = name.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/).filter(w => w && !/^(the|of|and|a|llc|inc|co)$/i.test(w))
+txt($('mono'), (words[0]?.[0] || '') + (words[1]?.[0] || ''))
+setAll('name', name)
+const city = [B.city, B.state].filter(Boolean).join(', ')
+document.title = name + (city ? ' | ' + (B.industry || 'Contractor') + ' in ' + city : '')
+// contact
+const phoneHref = B.phone ? 'tel:' + B.phone.replace(/[^+0-9]/g, '') : '#contact'
+setAll('phone', B.phone || '')
+document.querySelectorAll('[data-b="phoneLink"]').forEach(a => { a.href = phoneHref; if (!B.phone) a.hidden = true })
+if (!B.phone) $('callbar').hidden = true
+const address = [B.street, B.city, [B.state, B.zip].filter(Boolean).join(' ')].filter(Boolean).join(', ')
+const row = (label, value, href) => { if (!value) return; const r = make(href ? 'a' : 'div'); if (href) r.href = href; r.append(make('small', '', label), make('span', '', value)); $('info').append(r) }
+row('Phone', B.phone, phoneHref); row('Email', B.email, B.email && 'mailto:' + B.email); row('Address', address)
+txt($('foot-address'), address)
+// hero
+const P = B.photos || {}
+txt($('tagline'), B.tagline || (city ? (B.industry || 'Contractor') + ' in ' + city : 'Local contractor'))
+txt($('hero-title'), B.hero_title || 'Quality work you can count on.')
+txt($('hero-text'), B.hero_text || '')
+;(B.facts || []).forEach(f => $('facts').append(make('span', '', f)))
+img($('hero-img'), P.hero, ''); img($('side-img'), P.hero, name)
+// services
+txt($('services-title'), B.services_title || 'What we can do for you.')
+const services = B.services || []
+services.forEach((s, i) => { const c = make('div', 'card'); c.append(make('div', 'n', String(i + 1).padStart(2, '0')), make('h3', '', s.title), make('p', '', s.text || '')); $('services-list').append(c); const o = make('option', '', s.title); $('service-select').append(o) })
+$('service-select').append(make('option', '', 'Something else'))
+// about
+txt($('about-title'), B.about_title || 'About ' + name)
+txt($('about-text'), B.about || '')
+img($('about-img'), P.about || P.hero, name)
+;(B.stats || []).forEach(([v, l]) => { const d = make('div'); d.append(make('b', '', v), make('span', '', l)); $('stats').append(d) })
+// gallery
+const gal = P.gallery || []
+gal.forEach(src => { const i = make('img'); i.src = src; i.alt = B.gallery_alt || ''; $('gallery').append(i) })
+if (!gal.length) { $('work').hidden = true; $('nav-work').hidden = true }
+txt($('gallery-title'), B.gallery_title || 'What we build')
+// reviews (real ones only, from the business's own site or Google)
+const rv = B.reviews || []
+rv.forEach(r => { const c = make('div', 'review'); c.append(make('div', 'stars', '★★★★★'), make('q', '', r.quote), make('span', '', r.name + (r.source ? ' · ' + r.source : ''))); $('review-list').append(c) })
+if (!rv.length) { $('reviews').hidden = true; $('nav-reviews').hidden = true }
+// areas
+const areas = B.areas || []
+areas.forEach(a => $('areas').append(make('span', '', a)))
+if (!areas.length) $('areas-wrap').hidden = true
+txt($('credit'), B.credit || 'Website preview')
+txt($('pbar'), 'Website preview made for ' + name + ' by ' + (B.preview_by || 'Agris Tilks') + ' · not the official site')
+// behaviour
+const nav = $('nav'), onScroll = () => nav.classList.toggle('solid', scrollY > 40)
+addEventListener('scroll', onScroll, { passive: true }); onScroll()
+document.querySelectorAll('form').forEach(f => f.addEventListener('submit', e => { e.preventDefault(); f.querySelector('.done').style.display = 'block' }))
+}
+</script>
+</body>
+</html>
