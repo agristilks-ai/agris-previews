@@ -79,5 +79,5 @@ window.WEBSITE_BUSINESS = {
   "Vincennes",
   "Henderson, KY"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };

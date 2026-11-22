@@ -59,5 +59,5 @@ window.WEBSITE_BUSINESS = {
   "Fort Wayne",
   "Outlying areas"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };

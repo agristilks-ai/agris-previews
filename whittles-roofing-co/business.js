@@ -72,5 +72,5 @@ window.WEBSITE_BUSINESS = {
   "Newberry",
   "Surrounding areas"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };

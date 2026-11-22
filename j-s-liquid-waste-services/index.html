@@ -263,7 +263,7 @@ const areas = B.areas || []
 areas.forEach(a => $('areas').append(make('span', '', a)))
 if (!areas.length) $('areas-wrap').hidden = true
 txt($('credit'), B.credit || 'Website preview')
-txt($('pbar'), 'Website preview made for ' + name + ' by ' + (B.preview_by || 'Agris Tilks') + ' · not the official site')
+txt($('pbar'), 'Website preview made for ' + name + ' by ' + (B.preview_by || 'Tilks Web') + ' · not the official site')
 // behaviour
 const nav = $('nav'), onScroll = () => nav.classList.toggle('solid', scrollY > 40)
 addEventListener('scroll', onScroll, { passive: true }); onScroll()

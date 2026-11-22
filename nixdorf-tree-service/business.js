@@ -66,5 +66,5 @@ window.WEBSITE_BUSINESS = {
   "Springfield, MO",
   "Surrounding areas"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };

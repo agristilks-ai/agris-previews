@@ -77,5 +77,5 @@ window.WEBSITE_BUSINESS = {
   "Alachua County",
   "North Florida"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };

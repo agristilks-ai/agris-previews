@@ -49,5 +49,5 @@ window.WEBSITE_BUSINESS = {
   "Fort Wayne",
   "Greater Fort Wayne area"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };

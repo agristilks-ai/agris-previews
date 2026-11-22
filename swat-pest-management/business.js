@@ -93,5 +93,5 @@ window.WEBSITE_BUSINESS = {
   "Henderson, KY",
   "Carmi, IL"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };

@@ -63,5 +63,5 @@ window.WEBSITE_BUSINESS = {
   "Lubbock",
   "Surrounding area"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };

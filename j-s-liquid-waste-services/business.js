@@ -71,5 +71,5 @@ window.WEBSITE_BUSINESS = {
   "Fort Wayne",
   "Northeast Indiana"
  ],
- "credit": "Website preview by Agris Tilks"
+ "credit": "Website preview by Tilks Web"
 };
